@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-create-fiche',
@@ -15,12 +16,16 @@ export class CreateFicheComponent {
   name: string = 'Liste des fiches';
   path: string = 'listeFiche';
 
-  constructor() {
+  constructor(private router: Router) {
     this.select1 = ['text1', 'text2', 'text3', 'text4'];
     this.select2 = ['text1', 'text2', 'text3', 'text4'];
     this.select3 = ['text1', 'text2', 'text3', 'text4'];
     this.select4 = ['text1', 'text2', 'text3', 'text4'];
     this.select5 = ['text1', 'text2', 'text3', 'text4'];
+  }
+
+  onSubmit(form: any): void {
+    this.router.navigateByUrl('createFiche2Component');
   }
 
 }

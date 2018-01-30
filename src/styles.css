@@ -2,16 +2,17 @@
 .site__footer{
     background: #008C53;
     height: 50px;
-    position: absolute;
-    bottom: 0;
-    left: 0;
     width: 100%;
 }
 
-body{
-    overflow-y: hidden;
-}
 
 .dejardin--logo img{
     max-height: 100px;
+}
+svg{
+    display: none;
+}
+
+.content__wrapper{
+    min-height: 640px;
 }

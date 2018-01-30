@@ -1,8 +1,8 @@
 <div class="wrapper">
     <app-navigation></app-navigation>
 
-<div class="container">  
-    <form id="contact" action="" method="post">
+<div class="container content__wrapper">  
+    <form id="contact" (ngSubmit)="onSubmit($event)">
       <h3>Creation de fiche de verification</h3>
       <fieldset>
         <span>Superviseur</span>

@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateFiche2Component implements OnInit {
 
-  constructor() { }
+  select1: string[];
+  constructor() {
+    this.select1 = ['text1', 'text2', 'text3', 'text4'];
+   }
 
   ngOnInit() {
   }

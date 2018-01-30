@@ -1,12 +1,92 @@
-<h1>Elegant Contact Form</h1>
-<form class="cf">
-  <div class="half left cf">
-    <input type="text" id="input-name" placeholder="Name">
-    <input type="email" id="input-email" placeholder="Email address">
-    <input type="text" id="input-subject" placeholder="Subject">
+<app-navigation></app-navigation>
+<h1>Verification</h1>
+<div class="background">
+  <div class="form cf bordered">
+    <div class="half left cf grid">
+      <span>Date heure: </span>
+      <span> 2018 - 01 - 29</span>
+      <span>08:42</span>
+    </div>
+    <div class="half right cf grid">
+      <label>
+        <span>Transit</span>
+        <input type="text" id="input-name" placeholder="Name">
+      </label>
+      <span> - </span>
+      <label>
+        <span>Folio</span>
+        <input type="text" id="input-name" placeholder="Name">
+      </label>
+    </div>
+  </div>
+  <div class="form cf bordered">
+    <div class="half left cf complete">
+      <div>Direction: DIRECTION CLIENTELES RESEAUX COMPLEMENTAIRES</div>
+      <div>Periode: 01-2017</div>
+      <div>Centre: Desjardisn Montreal Centre-ville</div>
+    </div>
+    <div class="half right cf complete">
+      <div>Superviseur: Releve SUPERVISEUR</div>
+      <div>Conseiller: Prenom NOM</div>
+      <div>types de Processus: Ouverture de compte--NACC</div>
+    </div>
+  </div>
+</div>
+<form class="form cf">
+  <div class="half left cf complete">
+    <label>
+      <span>Etapes : </span>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <span>Sous-etape : </span>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <span>Micro etape (facultative) : </span>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <span>Controle : </span>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <span>Description du Controle : </span>
+      <label class="form--aligned">
+        <span>page : </span>
+        <div class="form--inner">
+          <input type="text" id="input-name" placeholder="Name">
+          <span> / </span>
+          <input type="text" id="input-name" placeholder="Name">
+        </div>
+
+      </label>
+      <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+    </label>
   </div>
   <div class="half right cf">
+    <div class="slide">
+      <button class="btn btn-lg btn-outline-primary">Controle precedent</button>
+      <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" [value]="1"> Oui
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" value="middle"> non
+        </label>
+        <label ngbButtonLabel class="btn-primary">
+          <input ngbButton type="radio" [value]="false"> S.O.
+        </label>
+      </div>
+      <button class="btn btn-lg btn-outline-primary">Controle suivant</button>
+    </div>
+    <label>
+      <span>Commentaire</span>
+      <select placeholder="Superviseur" tabindex="1" required autofocus>
+        <option *ngFor="let option of select1" value="{{option}}">{{option}}</option>
+      </select>
+    </label>
     <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
-  </div>  
+  </div>
   <input type="submit" value="Submit" id="input-submit">
 </form>
