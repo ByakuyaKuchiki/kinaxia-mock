@@ -1,0 +1,11 @@
+
+.nav-item.dropdown.show .nav-link.dropdown-toggle,
+.nav-item.dropdown .nav-link.dropdown-toggle:hover{
+    color: #3f8523 !important;
+    background-color: #fff !important;
+    /* border: 1px solid #3f8523; */
+    border-radius: 0;
+}
+.dropdown-menu{
+    margin: 0;
+}
