@@ -11,7 +11,7 @@ export class ListeFicheComponent implements OnInit {
 
   rows: Array<any> = [];
   columns: Array<any> = [
-    { title: 'Name', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' } },
+    { title: 'ID', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' } },
     {
       title: 'Position',
       name: 'position',
