@@ -11,17 +11,19 @@ export class ListeFicheComponent implements OnInit {
 
   rows: Array<any> = [];
   columns: Array<any> = [
-    { title: 'ID', name: 'name', filtering: { filterString: '', placeholder: 'Filter by name' } },
+    { title: 'ID', name: 'id', filtering: { filterString: '', placeholder: 'Filter by id' } },
     {
-      title: 'Position',
-      name: 'position',
+      title: 'folio',
+      name: 'folio',
       sort: false,
-      filtering: { filterString: '', placeholder: 'Filter by position' }
+      filtering: { filterString: '', placeholder: 'Filter by folio' }
     },
-    { title: 'Office', className: ['office-header', 'text-success'], name: 'office', sort: 'asc' },
-    { title: 'Extn.', name: 'ext', sort: '', filtering: { filterString: '', placeholder: 'Filter by extn.' } },
-    { title: 'Start date', className: 'text-warning', name: 'startDate' },
-    { title: 'Salary ($)', name: 'salary' }
+    { title: 'conseiller', name: 'conseiller' },
+    { title: 'superviseur', 
+          name: 'superviseur', 
+          filtering: { filterString: '', placeholder: 'Filter by superviseur' } },
+    { title: 'centre de service', name: 'centre' },
+    { title: 'validation', name: 'validation' },
   ];
   page = 1;
   itemsPerPage = 10;

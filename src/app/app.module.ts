@@ -25,6 +25,7 @@ import { GestionUtilisateurComponent } from './gestion-utilisateur/gestion-utili
 import { GestionCentreServiceComponent } from './gestion-centre-service/gestion-centre-service.component';
 import { GestionDirectionComponent } from './gestion-direction/gestion-direction.component';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
+import { CreateFiche2Component } from './create-fiche2/create-fiche2.component';
 
 
 
@@ -44,7 +45,8 @@ import { Ng2TableModule } from 'ng2-table/ng2-table';
     StatistiqueEmployeComponent,
     GestionUtilisateurComponent,
     GestionCentreServiceComponent,
-    GestionDirectionComponent
+    GestionDirectionComponent,
+    CreateFiche2Component
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,45 @@
-<p>
-  create-fiche works!
-</p>
+<div class="wrapper">
+    <app-navigation></app-navigation>
+
+<div class="container">  
+    <form id="contact" action="" method="post">
+      <h3>Creation de fiche de verification</h3>
+      <fieldset>
+        <span>Superviseur</span>
+        <select placeholder="Superviseur" tabindex="1" required autofocus>
+          <option *ngFor="let option of select1" value="{{option}}">{{option}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+          <span>Periode verifiée</span>
+        <select placeholder="Superviseur" tabindex="1" required autofocus>
+          <option *ngFor="let option of select2" value="{{option}}">{{option}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+          <span>Centre</span>
+        <select placeholder="Superviseur" tabindex="1" required autofocus>
+          <option *ngFor="let option of select3" value="{{option}}">{{option}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <span>Processus</span>
+        <select placeholder="Superviseur" tabindex="1" required autofocus>
+          <option *ngFor="let option of select4" value="{{option}}">{{option}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+          <span>Conseiller</span>
+        <select placeholder="Superviseur" tabindex="1" required autofocus>
+          <option *ngFor="let option of select5" value="{{option}}">{{option}}</option>
+        </select>
+      </fieldset>
+      <fieldset>
+        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
+      </fieldset>
+      <fieldset>
+          <app-route-link [name]="name" [path]="path"></app-route-link>
+        </fieldset>
+    </form>
+  </div>
+</div>

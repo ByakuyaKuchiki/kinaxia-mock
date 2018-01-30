@@ -13,6 +13,7 @@ import { StatistiqueEmployeComponent } from '../statistique-employe/statistique-
 import { GestionUtilisateurComponent } from '../gestion-utilisateur/gestion-utilisateur.component';
 import { GestionCentreServiceComponent } from '../gestion-centre-service/gestion-centre-service.component';
 import { GestionDirectionComponent } from '../gestion-direction/gestion-direction.component';
+import { CreateFiche2Component } from '../create-fiche2/create-fiche2.component';
 
 export const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -26,7 +27,8 @@ export const routes: Routes = [
   {path: 'statistiqueEmploye', component: StatistiqueEmployeComponent},
   {path: 'gestionUtilisateurComponent', component: GestionUtilisateurComponent},
   {path: 'gestionCentreServiceComponent', component: GestionCentreServiceComponent},
-  {path: 'gestionDirectionComponent', component: GestionDirectionComponent}
+  {path: 'gestionDirectionComponent', component: GestionDirectionComponent},
+  {path: 'createFiche2Component', component: CreateFiche2Component}
 ];
 
 
