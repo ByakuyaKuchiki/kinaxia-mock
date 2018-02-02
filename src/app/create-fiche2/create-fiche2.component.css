@@ -13,7 +13,6 @@ html, body {
 }
 
 h1 {
-  text-align: center;
   color: #008C53;
   text-shadow: 1px 1px 0 white;
 }
@@ -21,12 +20,13 @@ h1 {
 .form {
   max-width: 80%;
   text-align: center;
-  margin: 20px auto;
+  margin-left: 25px;
+  margin-bottom: 5px;
 }
 .form input, .form textarea {
   border: 0;
   outline: 0;
-  padding: 1em;
+  padding: .2em;
   display: block;
   width: 100%;
   margin-top: 1em;
@@ -41,12 +41,12 @@ h1 {
   -webkit-box-shadow: 0 0px 2px #008C53 !important;
   box-shadow: 0 0px 2px #008C53 !important;
 }
-.form #input-submit {
+.form .input-submit {
   color: white;
   background: #008C53;
   cursor: pointer;
 }
-.form #input-submit:hover {
+.form .input-submit:hover {
   -moz-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
   -webkit-box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
   box-shadow: 0 1px 1px 1px rgba(170, 170, 170, 0.6);
@@ -102,14 +102,12 @@ h1 {
 
 .form.bordered{
   border: 2px solid #000;
-  padding: 15px;
+  padding: 5px;
 }
 .background{
   width: 100%;
-  background-color: #008C53;
   padding: 10px;
 }
-
 
 
 .form--aligned .form--inner{
@@ -169,4 +167,33 @@ input[type="radio"]{
   display: block;
   width: 60%;
   margin: 25px auto;
+}
+
+select{
+width: 100%;
+min-width: 250px;
+}
+select.half{
+  width: 40%;
+}
+
+.search{
+  margin: 0 15px;
+  height: 25px;
+  padding: 0;
+  line-height: 0;
+}
+
+.submission{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.submission .input-submit{
+  width: 40%;
+}
+
+.form .complete label:not(.exception){
+  display: flex;
 }

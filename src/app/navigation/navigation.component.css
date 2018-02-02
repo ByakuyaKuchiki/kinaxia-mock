@@ -2,3 +2,15 @@
     background-color: #595959;
     color: #fff;
 }
+
+.logout{
+    color: #fff;
+    padding-top: 7px;
+    float: right;
+    position: absolute;
+    right: 200px;
+}
+
+.logout:hover{
+    text-decoration: none;
+}

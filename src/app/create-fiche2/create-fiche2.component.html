@@ -1,20 +1,20 @@
 <app-navigation></app-navigation>
-<h1>Verification</h1>
+<h1>Creation de fiche</h1>
 <div class="background">
   <div class="form cf bordered">
     <div class="half left cf grid">
-      <span>Date heure: </span>
-      <span> 2018 - 01 - 29</span>
-      <span>08:42</span>
+      <div>Date heure: </div>
+      <div> 2018 - 01 - 29</div>
+      <div>08:42</div>
     </div>
     <div class="half right cf grid">
       <label>
-        <span>Transit</span>
+        <div>Transit</div>
         <input type="text" id="input-name" placeholder="Name">
       </label>
-      <span> - </span>
+      <div> - </div>
       <label>
-        <span>Folio</span>
+        <div>Folio</div>
         <input type="text" id="input-name" placeholder="Name">
       </label>
     </div>
@@ -32,42 +32,20 @@
     </div>
   </div>
 </div>
-<form class="form cf">
+<div class="form cf bordered">
   <div class="half left cf complete">
+    <div>Rechercher etapes: </div>
     <label>
-      <span>Etapes : </span>
-      <input type="text" id="input-name" placeholder="Name">
-    </label>
-    <label>
-      <span>Sous-etape : </span>
-      <input type="text" id="input-name" placeholder="Name">
-    </label>
-    <label>
-      <span>Micro etape (facultative) : </span>
-      <input type="text" id="input-name" placeholder="Name">
-    </label>
-    <label>
-      <span>Controle : </span>
-      <input type="text" id="input-name" placeholder="Name">
-    </label>
-    <label>
-      <span>Description du Controle : </span>
-      <label class="form--aligned">
-        <span>page : </span>
-        <div class="form--inner">
-          <input type="text" id="input-name" placeholder="Name">
-          <span> / </span>
-          <input type="text" id="input-name" placeholder="Name">
-        </div>
-
-      </label>
-      <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+      <select class="half" placeholder="Superviseur" tabindex="1" required autofocus>
+        <option *ngFor="let option of select1" value="{{option}}">{{option}}</option>
+      </select>
+      <button class="btn btn-lg btn-outline-primary search">Rechercher</button>
     </label>
   </div>
   <div class="half right cf">
     <div class="slide">
       <button class="btn btn-lg btn-outline-primary">Controle precedent</button>
-      <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="model">
+      <div class="btn-group btn-group-toggle" ngbRadioGroup name="radioBasic">
         <label ngbButtonLabel class="btn-primary">
           <input ngbButton type="radio" [value]="1"> Oui
         </label>
@@ -80,13 +58,52 @@
       </div>
       <button class="btn btn-lg btn-outline-primary">Controle suivant</button>
     </div>
+  </div>
+</div>
+<form class="form cf" (ngSubmit)="onSubmit()">
+  <div class="half left cf complete">
     <label>
-      <span>Commentaire</span>
+      <div>Etapes : </div>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <div>Sous-etape : </div>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <div>Micro etape (facultative) : </div>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label>
+      <div>Controle : </div>
+      <input type="text" id="input-name" placeholder="Name">
+    </label>
+    <label class="exception">
+      <div>Description du Controle : </div>
+      <label class="form--aligned">
+        <div>page : </div>
+        <div class="form--inner">
+          <input type="text" id="input-name" placeholder="Name">
+          <span> / </span>
+          <input type="text" id="input-name" placeholder="Name">
+        </div>
+
+      </label>
+      <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+    </label>
+  </div>
+  <div class="half right cf">
+    <label>
+      <div>Commentaire</div>
       <select placeholder="Superviseur" tabindex="1" required autofocus>
         <option *ngFor="let option of select1" value="{{option}}">{{option}}</option>
       </select>
     </label>
     <textarea name="message" type="text" id="input-message" placeholder="Message"></textarea>
+    <input type="submit" value="Ajouter ce texte a la liste deroulante" class="input-submit">
   </div>
-  <input type="submit" value="Submit" id="input-submit">
+<div class="submission">
+    <input type="submit" value="Enregistrer definitivement" class="input-submit" (click)="clickSubmit()">
+    <input type="submit" value="Enregistrer provisoirement" class="input-submit" (click)="clickSubmit()">    
+</div>
 </form>

@@ -1,3 +1,68 @@
-<p>
-  ctrl-interne works!
-</p>
+<div class="wrapper">
+    <app-navigation></app-navigation>
+    <div class="container">
+        <form id="contact" (ngSubmit)="onSubmit(selectElem.value)">
+            <div class="row">
+                <div class="col-md-4">Centre</div>
+                <select disabled tabindex="1" required autofocus>
+                    <option *ngFor="let option of select1" value="{{option}}">{{option}}</option>
+                </select>
+                <span class="checkbox"> tous les centres </span>
+                <input type="checkbox" checked disabled>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Annee</div>
+                <select disabled tabindex="1" required autofocus>
+                    <option *ngFor="let option of select3" value="{{option}}">{{option}}</option>
+                </select>
+                <div class="checkbox"> Année </div>
+                <input type="checkbox" checked disabled>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">Periode verifiée (MM/AAAA)</div>
+                <select disabled tabindex="1" required autofocus>
+
+                </select>
+            </div>
+            <div class="row">
+                <div class="col-md-4">Processus</div>
+                <select tabindex="1" required autofocus #selectElem>
+                    <option *ngFor="let option of select4" value="{{option}}">{{option}}</option>
+                </select>
+            </div>
+            <div class="submission">
+                <button class="btn btn-lg btn-outline-primary" name="Valider" type="submit">Recherche rapport</button>
+            </div>
+        </form>
+        <table *ngIf="showResult">
+            <thead>
+                <tr>
+                    <th>Nom du controle</th>
+                    <th>Trimestre 1 | Fiche 2</th>
+                    <th>Trimestre 2 | Fiche 0</th>
+                    <th>Trimestre 3 | Fiche 4</th>
+                    <th>Trimestre 4 | Fiche 0</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2.1.1 Documents obligatoires requis (Note 1, Note 3)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2.1.4 Pièces d'identités des signataires (Note 1, Note3)</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div>

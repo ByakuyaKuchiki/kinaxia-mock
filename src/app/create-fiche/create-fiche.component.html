@@ -1,45 +1,44 @@
 <div class="wrapper">
     <app-navigation></app-navigation>
-
+    <div class="row container">
+        <div class="redirection">
+            <button (click)="redirect()" class="btn btn-lg btn-outline-primary">Liste des fiches</button>
+        </div>
+      </div>
 <div class="container content__wrapper">  
     <form id="contact" (ngSubmit)="onSubmit($event)">
       <h3>Creation de fiche de verification</h3>
-      <fieldset>
-        <span>Superviseur</span>
-        <select placeholder="Superviseur" tabindex="1" required autofocus>
+      <div class="row">
+        <div class="col-md-4">Superviseur</div>
+        <select class="col-md-8" placeholder="Superviseur" tabindex="1" required autofocus>
           <option *ngFor="let option of select1" value="{{option}}">{{option}}</option>
         </select>
-      </fieldset>
-      <fieldset>
-          <span>Periode verifiée</span>
-        <select placeholder="Superviseur" tabindex="1" required autofocus>
-          <option *ngFor="let option of select2" value="{{option}}">{{option}}</option>
-        </select>
-      </fieldset>
-      <fieldset>
-          <span>Centre</span>
-        <select placeholder="Superviseur" tabindex="1" required autofocus>
+      </div>
+      <div class="row">
+          <div class="col-md-4">Periode verifiée (MM/AAAA)</div>
+          <input class="col-md-8" type="text" placeholder="__/ ____">
+      </div>
+      <div class="row">
+          <div class="col-md-4">Centre</div>
+          <select class="col-md-8" placeholder="Superviseur" tabindex="1" required autofocus>
           <option *ngFor="let option of select3" value="{{option}}">{{option}}</option>
         </select>
-      </fieldset>
-      <fieldset>
-        <span>Processus</span>
-        <select placeholder="Superviseur" tabindex="1" required autofocus>
+      </div>
+      <div class="row">
+          <div class="col-md-4">Processus</div>
+        <select class="col-md-8" placeholder="Superviseur" tabindex="1" required autofocus>
           <option *ngFor="let option of select4" value="{{option}}">{{option}}</option>
         </select>
-      </fieldset>
-      <fieldset>
-          <span>Conseiller</span>
-        <select placeholder="Superviseur" tabindex="1" required autofocus>
+      </div>
+      <div class="row">
+          <div class="col-md-4">Conseiller</div>
+          <select class="col-md-8" placeholder="Superviseur" tabindex="1" required autofocus>
           <option *ngFor="let option of select5" value="{{option}}">{{option}}</option>
         </select>
-      </fieldset>
-      <fieldset>
-        <button name="submit" type="submit" id="contact-submit" data-submit="...Sending">Submit</button>
-      </fieldset>
-      <fieldset>
-          <app-route-link [name]="name" [path]="path"></app-route-link>
-        </fieldset>
+      </div>
+      <div class="submission">
+        <button class="btn btn-lg btn-outline-primary" name="Valider" type="submit" >Valider</button>
+      </div>
     </form>
   </div>
 </div>

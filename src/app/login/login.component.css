@@ -147,7 +147,7 @@
   .login input[type='password'],
   .login input[type='submit'] {
     padding: 16px;
-    padding: 1rem;
+    padding: .7rem;
   }
   
   .login label {
@@ -208,7 +208,7 @@
       justify-content: center;
       align-items: center;
       height: calc(100vh - 200px);
-      min-height: 640px;
+      min-height: 568px;
   }
 
   .grid{
@@ -230,4 +230,57 @@
 }
 .form__field.form__field--part p{
     color: #000;
+}
+
+p{
+  margin: .5rem;
+}
+
+.nav.nav-pills{
+  background-color: #595959;
+  color: #fff;
+  height: 40px;
+  width: 100%;
+}
+
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+  color: #008C53;
+  background-color: #fff;
+  border-color: #008C53;
+  box-shadow: 0 0 0 0.2rem rgba(0, 140, 83, .5);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #008C53;
+  border-color: #008C53;
+  margin-bottom: 0;
+}
+
+.btn-outline-primary {
+  color: #008C53;
+  background-color: transparent;
+  background-image: none;
+  border-color: #008C53;
+  max-width: 150px;
+  width: 100%;
+}
+
+.btn-outline-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(0, 140, 83, .5);
+}
+
+.btn-outline-primary:not([disabled]):not(.disabled):active{
+    color: #fff;
+    background-color: #008C53;
+    border-color: #008C53;
+    box-shadow: 0 0 0 0.2rem rgba(0, 140, 83, .5);
+}
+
+
+.btn-group-lg>.btn, .btn-lg {
+  padding: .5rem 1rem;
+  font-size: 1.25rem;
+  line-height: .5;
+  border-radius: .3rem;
 }

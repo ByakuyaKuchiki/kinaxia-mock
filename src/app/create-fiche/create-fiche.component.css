@@ -23,9 +23,8 @@ body {
 }
 
 .container {
-	max-width:400px;
-	width:100%;
-	margin:0 auto;
+	max-width:800px;
+	width:80%;
 	position:relative;
 }
 
@@ -42,6 +41,7 @@ body {
 	display: block;
 	font-size: 30px;
 	font-weight: 400;
+	margin: 10px;
 }
 
 #contact h4 {
@@ -50,13 +50,8 @@ body {
 	font-size:13px;
 }
 
-fieldset {
-	border: medium none !important;
-	margin: 0 0 10px;
-	min-width: 100%;
-	padding: 0;
-	width: 100%;
-}
+
+
 
 #contact input[type="text"],
 #contact input[type="email"],
@@ -64,11 +59,11 @@ fieldset {
 #contact input[type="url"], 
 #contact textarea,
 #contact select {
-	width:100%;
+	width:50%;
 	border:1px solid #CCC;
 	background:#FFF;
 	margin:0 0 5px;
-	padding:10px;
+	padding:5px;
 }
 
 #contact input[type="text"]:hover, #contact input[type="email"]:hover, #contact input[type="tel"]:hover, #contact input[type="url"]:hover, #contact textarea:hover {
@@ -86,7 +81,7 @@ fieldset {
 
 #contact button[type="submit"] {
 	cursor:pointer;
-	width:100%;
+	width:20%;
 	border:none;
 	background:#008C53;
 	color:#FFF;
@@ -121,3 +116,48 @@ fieldset {
  color:#888;
 }
 
+.btn-primary:not([disabled]):not(.disabled).active, .btn-primary:not([disabled]):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #008C53;
+    background-color: #fff;
+    border-color: #008C53;
+    box-shadow: 0 0 0 0.2rem rgba(0, 140, 83, .5);
+  }
+  
+  .btn-primary {
+    color: #fff;
+    background-color: #008C53;
+    border-color: #008C53;
+    margin-bottom: 0;
+  }
+  
+  .btn-outline-primary {
+    color: #008C53;
+    background-color: transparent;
+    background-image: none;
+    border-color: #008C53;
+    max-width: 200px;
+    width: 100%;
+  }
+  
+  .btn-outline-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 140, 83, .5);
+  }
+  
+  .btn-outline-primary:not([disabled]):not(.disabled):active{
+    color: #fff;
+      background-color: #008C53;
+      border-color: #008C53;
+      box-shadow: 0 0 0 0.2rem rgba(0, 140, 83, .5);
+  }
+
+  .redirection{
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+	  padding: 35px 25px 0 25px;
+  }
+
+.submission{
+	display: flex;
+	justify-content: flex-end;
+}

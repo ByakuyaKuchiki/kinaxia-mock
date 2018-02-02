@@ -1,29 +1,31 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit } from '@angular/core';
 import { Ng2TableModule } from 'ng2-table/ng2-table';
-import { TableData } from './table-data';
+import { TableData, ValideTableData } from './table-data';
+
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-liste-fiche',
   templateUrl: './liste-fiche.component.html',
   styleUrls: ['./liste-fiche.component.css']
 })
-export class ListeFicheComponent implements OnInit {
+export class ListeFicheComponent implements OnInit, AfterViewInit {
 
   rows: Array<any> = [];
   columns: Array<any> = [
-    { title: 'ID', name: 'id', filtering: { filterString: '', placeholder: 'Filter by id' } },
+    { title: 'Numero de fiche', name: 'id', filtering: { filterString: '', placeholder: 'Filtrer par numero' } },
     {
       title: 'folio',
       name: 'folio',
       sort: false,
-      filtering: { filterString: '', placeholder: 'Filter by folio' }
+      filtering: { filterString: '', placeholder: 'Filtrer par folio' }
     },
     { title: 'conseiller', name: 'conseiller' },
-    { title: 'superviseur', 
-          name: 'superviseur', 
-          filtering: { filterString: '', placeholder: 'Filter by superviseur' } },
+    { title: 'superviseur',
+          name: 'superviseur',
+          filtering: { filterString: '', placeholder: 'Filtrer par superviseur' } },
     { title: 'centre de service', name: 'centre' },
-    { title: 'validation', name: 'validation' },
+    { title: 'Actions', name: 'validation' },
   ];
   page = 1;
   itemsPerPage = 10;
@@ -34,13 +36,12 @@ export class ListeFicheComponent implements OnInit {
   config: any = {
     paging: true,
     sorting: { columns: this.columns },
-    filtering: { filterString: '' },
     className: ['table-striped', 'table-bordered']
   };
 
   private data: Array<any> = TableData;
 
-  constructor() {
+  constructor(private router: Router) {
     this.length = this.data.length;
   }
 
@@ -136,8 +137,28 @@ export class ListeFicheComponent implements OnInit {
     this.length = sortedData.length;
   }
 
-  onCellClick(data: any): any {
-    console.log(data);
+  redirect(data: any): any {
+    this.router.navigateByUrl('createFiche');
+  }
+
+
+  ngAfterViewInit() {
+  }
+
+  setData(name: string){
+    switch (name) {
+      case 'avalider':
+        this.data = TableData;
+        break;
+      case 'valide':
+        this.data = ValideTableData;
+        break;
+      case 'tous':
+        this.data = ValideTableData.concat(TableData);
+        break;
+    }
+    
+    this.onChangeTable(this.config);
   }
 
 }
