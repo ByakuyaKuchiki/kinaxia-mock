@@ -1,1 +1,153 @@
 <app-navigation></app-navigation>
+
+<div class="wrapper">
+  <div class="container">
+    <form id="contact" (ngSubmit)="onSubmit($event)">
+      <div class="row">
+        <div class="col-md-4">Annee: </div>
+        <select tabindex="1" (change)="setSubmission()" [(ngModel)]="choiceYear" name='yearSelect'>
+          <option *ngFor="let year of years" value="{{year}}">{{year}}</option>
+        </select>
+      </div>
+
+      <div class="row marged--top" *ngIf="choiceYear">
+        <span class="col-md-4">type de période: </span>
+        <div class="btn-group choiceYear btn-group-toggle" ngbRadioGroup name="radioBasic" [(ngModel)]="periodeChoice" (change)="loadSelection()">
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="0"> Annuel
+          </label>
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="1"> Trimestriel
+          </label>
+          <label ngbButtonLabel class="btn-primary">
+            <input ngbButton type="radio" [value]="2"> Mensuel
+          </label>
+        </div>
+        <hr>
+      </div>
+
+      <div class="row" *ngIf="choiceYear && periodeChoice">
+        <div class="col-md-4">Selection de la periode: </div>
+        <select tabindex="1" required name="choixPeriode" (change)="setSubmission()" [(ngModel)]="finalValue">
+          <option *ngFor="let periode of periodeSelection" value="{{periode}}">{{periode}}</option>
+        </select>
+      </div>
+      <div class="submission" *ngIf="readyToSubmit">
+        <button class="btn btn-lg btn-outline-primary" name="Valider" type="submit">Recherche rapport</button>
+      </div>
+    </form>
+
+
+    <div class="row selectService" *ngIf="submited">
+      <div class="col-md-4">Service: </div>
+      <select tabindex="1" [(ngModel)]="choiceService" name='selectService'>
+        <option *ngFor="let service of services" value="{{service}}">{{service}}</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row table__container" *ngIf="submited">
+    <div class="col-md-8 table__title">
+      <span class='choicePeriode'> Annee: {{choiceYear}}</span>
+      <span class='choicePeriod' *ngIf="choiceService"> - </span>
+      <span class="choiceService">{{choiceService}}</span>
+    </div>
+    <div class="col-md-12 result__table">
+      <table>
+        <thead>
+          <th class="tablePeriod">{{periodeChoiceString}}
+            <span class='choicePeriode' *ngIf="finalValue"> - </span>
+            {{finalValue}}
+          </th>
+          <th>Clients, produits et pratiques commerciales</th>
+          <th>Exécution, gestion et livraison des processus</th>
+          <th>Fraude Externe</th>
+          <th>Fraude Interne</th>
+          <th>Interruption des activités et dysfonctionnement des systèmes</th>
+          <th>Pratique en matière d'emploi et sécurité sur les lieux de travail</th>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>PSR Centre-ville
+            </td>
+            <td>86%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>82%</td>
+            <td>90%</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>Studio Alexis-Nihon
+            </td>
+            <td>90%</td>
+            <td>90%</td>
+            <td>100%</td>
+            <td>74%</td>
+            <td>100%</td>
+            <td>78%</td>
+          </tr>
+          <tr>
+            <td>PSR Brossard
+            </td>
+            <td>82%</td>
+            <td>100%</td>
+            <td>100%</td>
+            <td>82%</td>
+            <td>100%</td>
+            <td>82%</td>
+          </tr>
+          <tr>
+            <td>PSR Marché Central</td>
+            <td>86%</td>
+            <td>90%</td>
+            <td>100%</td>
+            <td>74%</td>
+            <td>100%</td>
+            <td>74%</td>
+          </tr>
+          <tr>
+            <td>Stratégie Internationale
+            </td>
+            <td>87%</td>
+            <td>95%</td>
+            <td>100%</td>
+            <td>78%</td>
+            <td>100%</td>
+            <td>82%</td>
+          </tr>
+          <tr>
+            <td>360d UQTR
+            </td>
+            <td>85%</td>
+            <td>95%</td>
+            <td>100%</td>
+            <td>78%</td>
+            <td>95%</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>360d Concordia
+            </td>
+            <td>85%</td>
+            <td>95%</td>
+            <td>100%</td>
+            <td>78%</td>
+            <td>90%</td>
+            <td>100%</td>
+          </tr>
+          <tr>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+            <td>…</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
