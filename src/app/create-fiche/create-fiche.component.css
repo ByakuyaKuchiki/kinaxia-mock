@@ -161,3 +161,12 @@ body {
 	display: flex;
 	justify-content: flex-end;
 }
+.form-group{
+	margin: 5px 0;
+}
+
+
+h1{
+	color: #008C53;
+	text-transform: uppercase;
+}

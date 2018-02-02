@@ -1,5 +1,6 @@
 <div class="wrapper">
     <app-navigation></app-navigation>
+    <h1>Creation de fiche de verification</h1>
     <div class="row container">
         <div class="redirection">
             <button (click)="redirect()" class="btn btn-lg btn-outline-primary">Liste des fiches</button>
@@ -16,7 +17,17 @@
       </div>
       <div class="row">
           <div class="col-md-4">Periode verifiée (MM/AAAA)</div>
-          <input class="col-md-8" type="text" placeholder="__/ ____">
+          <div class="form-group col-md-8">
+              <div class="input-group">
+                <input id="dateValue" class="form-control" placeholder="__/____"
+                (ngModelChange)="changeDate()" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="btn btn-outline-secondary" (click)="d.toggle()" type="button">
+                    <img src="/assets/images/calendar-icon.svg" style="width: 2.2rem; height: 2rem; cursor: pointer;"/>
+                  </button>
+                </div>
+              </div>
+            </div>
       </div>
       <div class="row">
           <div class="col-md-4">Centre</div>
